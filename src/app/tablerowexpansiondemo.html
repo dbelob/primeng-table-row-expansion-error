@@ -7,7 +7,8 @@
 
 <div class="content-section implementation">
     <div class="card">
-        <p-table [value]="products" dataKey="name" [tableStyle]="{'min-width': '60rem'}">
+        <p-table [value]="products" dataKey="name" [tableStyle]="{'min-width': '60rem'}"
+                 styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines">
             <ng-template pTemplate="header">
                 <tr>
                     <th style="width: 5rem"></th>
@@ -36,7 +37,7 @@
                 <tr>
                     <td colspan="7">
                         <div class="p-3">
-                            <p-table [value]="product.orders" dataKey="id">
+                            <p-table [value]="product.orders" dataKey="id" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines">
                                 <ng-template pTemplate="header">
                                     <tr>
                                         <th pSortableColumn="id">Id <p-sortIcon field="price"></p-sortIcon></th>
