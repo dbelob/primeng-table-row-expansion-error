@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "primeng-table-row-expansion-error:build:production"
+              "buildTarget": "primeng-table-row-expansion-error:build:production"
             },
             "development": {
-              "browserTarget": "primeng-table-row-expansion-error:build:development"
+              "buildTarget": "primeng-table-row-expansion-error:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "primeng-table-row-expansion-error:build"
+            "buildTarget": "primeng-table-row-expansion-error:build"
           }
         },
         "test": {
