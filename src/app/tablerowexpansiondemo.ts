@@ -3,8 +3,9 @@ import { Product } from './domain/product';
 import { ProductService } from './service/productservice';
 
 @Component({
-  selector: 'app-table-row-expansion-demo',
-  templateUrl: './tablerowexpansiondemo.html'
+    selector: 'app-table-row-expansion-demo',
+    templateUrl: './tablerowexpansiondemo.html',
+    standalone: false
 })
 export class TableRowExpansionDemo implements OnInit {
   products: Product[] = [];
