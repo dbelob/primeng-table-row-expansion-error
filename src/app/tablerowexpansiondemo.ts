@@ -15,4 +15,30 @@ export class TableRowExpansionDemo implements OnInit {
   ngOnInit() {
     this.productService.getProductsWithOrdersSmall().then((data) => (this.products = data));
   }
+
+  getSeverity(status: string) {
+    switch (status) {
+      case 'INSTOCK':
+        return 'success';
+      case 'LOWSTOCK':
+        return 'warn';
+      case 'OUTOFSTOCK':
+        return 'danger';
+      default:
+        return undefined;
+    }
+  }
+
+  getStatusSeverity(status: string) {
+    switch (status) {
+      case 'PENDING':
+        return 'warn';
+      case 'DELIVERED':
+        return 'success';
+      case 'CANCELLED':
+        return 'danger';
+      default:
+        return undefined;
+    }
+  }
 }

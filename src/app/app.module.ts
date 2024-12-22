@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
+import { Tag } from 'primeng/tag';
 import { AppComponent } from './app.component';
 import { TableRowExpansionDemo } from './tablerowexpansiondemo';
 import { ProductService } from './service/productservice';
@@ -27,7 +28,9 @@ import { definePreset } from "@primeng/themes";
     ButtonModule,
     RatingModule,
     RippleModule,
-    TableModule],
+    TableModule,
+    Tag
+  ],
   providers: [
     ProductService,
     provideHttpClient(withInterceptorsFromDi()),
