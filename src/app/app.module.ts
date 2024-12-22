@@ -8,17 +8,32 @@ import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
 import { AppComponent } from './app.component';
 import { TableRowExpansionDemo } from './tablerowexpansiondemo';
-import { ProductService } from "./service/productservice";
+import { ProductService } from './service/productservice';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
 
-@NgModule({ declarations: [
-        AppComponent,
-        TableRowExpansionDemo
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        FormsModule,
-        ButtonModule,
-        RatingModule,
-        RippleModule,
-        TableModule], providers: [ProductService, provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [
+    AppComponent,
+    TableRowExpansionDemo
+  ],
+  bootstrap: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ButtonModule,
+    RatingModule,
+    RippleModule,
+    TableModule],
+  providers: [
+    ProductService,
+    provideHttpClient(withInterceptorsFromDi()),
+    providePrimeNG({
+      theme: { preset: Aura },
+    })
+  ]
+})
 export class AppModule {
 }
