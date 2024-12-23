@@ -10,9 +10,9 @@ import { Tag } from 'primeng/tag';
 import { AppComponent } from './app.component';
 import { TableRowExpansionDemo } from './tablerowexpansiondemo';
 import { ProductService } from './service/productservice';
+import { definePreset } from '@primeng/themes';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
-import { definePreset } from "@primeng/themes";
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { definePreset } from "@primeng/themes";
     provideHttpClient(withInterceptorsFromDi()),
     providePrimeNG({
       theme: {
-        preset: definePreset(Aura, definePreset(Aura, {
+        preset: definePreset(Aura, {
           semantic: {
             primary: {
               50: "{blue.50}",
@@ -52,7 +52,7 @@ import { definePreset } from "@primeng/themes";
               950: "{blue.950}"
             }
           }
-        }))
+        })
       },
     })
   ]
