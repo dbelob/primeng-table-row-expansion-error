@@ -8,7 +8,7 @@
 <div class="content-section implementation">
     <div class="card">
         <p-table [value]="products" dataKey="name" [tableStyle]="{'min-width': '60rem'}" showGridlines="true">
-            <ng-template pTemplate="header">
+            <ng-template #header>
                 <tr>
                     <th style="width: 5rem"></th>
                     <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
@@ -19,7 +19,7 @@
                     <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-product let-expanded="expanded">
+            <ng-template #body let-product let-expanded="expanded">
                 <tr>
                     <td>
                         <button type="button" pButton pRipple [pRowToggler]="product" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
@@ -34,12 +34,12 @@
                     </td>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="rowexpansion" let-product>
+            <ng-template #expandedrow let-product>
                 <tr>
                     <td colspan="7">
                         <div class="p-3">
                             <p-table [value]="product.orders" dataKey="id">
-                                <ng-template pTemplate="header">
+                                <ng-template #header>
                                     <tr>
                                         <th pSortableColumn="id">Id <p-sortIcon field="price"></p-sortIcon></th>
                                         <th pSortableColumn="customer">Customer <p-sortIcon field="customer"></p-sortIcon></th>
@@ -49,7 +49,7 @@
                                         <th style="width: 4rem"></th>
                                     </tr>
                                 </ng-template>
-                                <ng-template pTemplate="body" let-order>
+                                <ng-template #body let-order>
                                     <tr>
                                         <td>{{order.id}}</td>
                                         <td>{{order.customer}}</td>
@@ -61,7 +61,7 @@
                                         <td><p-button type="button" icon="pi pi-search"></p-button></td>
                                     </tr>
                                 </ng-template>
-                                <ng-template pTemplate="emptymessage">
+                                <ng-template #emptymessage>
                                     <tr>
                                         <td colspan="6">There are no order for this product yet.</td>
                                     </tr>
@@ -71,7 +71,7 @@
                     </td>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="footer">
+            <ng-template #footer>
               <tr>
                 <td colspan="3">Total</td>
                 <td>$1000.00</td>
