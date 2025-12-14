@@ -10,9 +10,9 @@ import { Tag } from 'primeng/tag';
 import { AppComponent } from './app.component';
 import { TableRowExpansionDemo } from './tablerowexpansiondemo';
 import { ProductService } from './service/productservice';
-import { definePreset } from '@primeng/themes';
+import { definePreset } from '@primeuix/themes';
 import { providePrimeNG } from 'primeng/config';
-import Aura from '@primeng/themes/aura';
+import Aura from '@primeuix/themes/aura';
 
 @NgModule({
   declarations: [
