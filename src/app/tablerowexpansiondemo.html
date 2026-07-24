@@ -11,18 +11,25 @@
             <ng-template #header>
                 <tr>
                     <th style="width: 5rem"></th>
-                    <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="name">Name <p-sort-icon field="name"></p-sort-icon></th>
                     <th>Image</th>
-                    <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
-                    <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
-                    <th pSortableColumn="rating">Reviews <p-sortIcon field="rating"></p-sortIcon></th>
-                    <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
+                    <th pSortableColumn="price">Price <p-sort-icon field="price"></p-sort-icon></th>
+                    <th pSortableColumn="category">Category <p-sort-icon field="category"></p-sort-icon></th>
+                    <th pSortableColumn="rating">Reviews <p-sort-icon field="rating"></p-sort-icon></th>
+                    <th pSortableColumn="inventoryStatus">Status <p-sort-icon field="inventoryStatus"></p-sort-icon></th>
                 </tr>
             </ng-template>
             <ng-template #body let-product let-expanded="expanded">
                 <tr>
                     <td>
-                        <button type="button" pButton pRipple [pRowToggler]="product" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+                        <button type="button" pButton pRipple [pRowToggler]="product"
+                                class="p-button-text p-button-rounded p-button-plain">
+                          @if (expanded) {
+                            <svg data-p-icon="chevron-down" />
+                          } @else {
+                            <svg data-p-icon="chevron-right" />
+                          }
+                        </button>
                     </td>
                     <td>{{product.name}}</td>
                     <td><img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name" width="100" class="shadow-4" /></td>
@@ -41,11 +48,11 @@
                             <p-table [value]="product.orders" dataKey="id">
                                 <ng-template #header>
                                     <tr>
-                                        <th pSortableColumn="id">Id <p-sortIcon field="price"></p-sortIcon></th>
-                                        <th pSortableColumn="customer">Customer <p-sortIcon field="customer"></p-sortIcon></th>
-                                        <th pSortableColumn="date">Date <p-sortIcon field="date"></p-sortIcon></th>
-                                        <th pSortableColumn="amount">Amount <p-sortIcon field="amount"></p-sortIcon></th>
-                                        <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
+                                        <th pSortableColumn="id">Id <p-sort-icon field="price"></p-sort-icon></th>
+                                        <th pSortableColumn="customer">Customer <p-sort-icon field="customer"></p-sort-icon></th>
+                                        <th pSortableColumn="date">Date <p-sort-icon field="date"></p-sort-icon></th>
+                                        <th pSortableColumn="amount">Amount <p-sort-icon field="amount"></p-sort-icon></th>
+                                        <th pSortableColumn="status">Status <p-sort-icon field="status"></p-sort-icon></th>
                                         <th style="width: 4rem"></th>
                                     </tr>
                                 </ng-template>

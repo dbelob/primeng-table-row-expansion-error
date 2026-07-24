@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
+import { ChevronDown } from '@primeicons/angular/chevron-down';
+import { ChevronRight } from '@primeicons/angular/chevron-right';
 import { RatingModule } from 'primeng/rating';
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
@@ -24,6 +26,8 @@ import Aura from '@primeuix/themes/aura';
   ],
   imports: [
     BrowserModule,
+    ChevronDown,
+    ChevronRight,
     FormsModule,
     ButtonModule,
     RatingModule,
