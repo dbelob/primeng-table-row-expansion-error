@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Product } from './domain/product';
 import { ProductService } from './service/productservice';
 
 @Component({
     selector: 'app-table-row-expansion-demo',
     templateUrl: './tablerowexpansiondemo.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TableRowExpansionDemo implements OnInit {
